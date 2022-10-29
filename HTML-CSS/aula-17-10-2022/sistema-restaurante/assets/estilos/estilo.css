@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+    font-family: 'Poppins';
+    background-color: lightgrey;
+}
+
+.titulo {
+    color: #730909;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.conteudo {
+    padding: 20px;
+}
+
+.item-menu-box {
+    margin-right: 30px;
+    display: inline-block;
+}
+
+.item-menu a{
+    color: #730909;
+    font-size: 16px;
+}
+
+.item-proprietario {
+    display: inline-block;
+}
+
+.negrito {
+    font-weight: bold;
+}
+
+.voltar a {
+    color: gray;
+}
+
+.item-lista {    
+    margin-bottom: 20px;
+}
+
+.item-lista a {
+    color: #730909;
+}
+
+.texto-pagina{
+    font-size: 16px;
+    margin-bottom: 20px;
+}

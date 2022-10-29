@@ -1,0 +1,31 @@
+.quadrado-grande {
+    width: 250px;
+    height: 250px;
+    border: 1px solid red;
+}
+
+.quadrado-pequeno {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    margin: 10px;
+    text-align: center;
+}
+
+.verde {
+    right: 20px;
+    position: relative;
+    background-color: #3cd3a1;
+}
+
+.azul {
+    background-color: #6f6fff;
+}
+
+.marrom {
+    background-color: #a5742a;
+}
+
+.roxo {
+    background-color: blueviolet;
+}
