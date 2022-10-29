@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins';
+}
+
+header {
+    background-color: #6950A1;
+    height: 200px;
+    padding: 30px;
+}
+
+#titulo {
+    color: white;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 54px;
+    margin-top: 30px;
+    width: 55%;
+}
+
+#conteudo {
+    padding: 30px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#titulo-texto {
+    font-weight: 700;
+}
+
+.texto {
+    font-weight: 400;
+    margin-top: 30px;
+}
+
+#conteudo-texto {
+    width: 60%;
+    font-size: 20px;
+    color: #2B2B2B;
+}
+
+#conteudo-formulario {
+    width: 30%;
+    padding-left: 80px;
+}
+
+#card {
+    border: 2px solid #6950A1;
+    border-radius: 15px;
+    width: 372px;
+    position: absolute;
+    top: 130px;
+}
+
+#titulo-formulario {
+    color: white;
+    background-color: #1a1033;
+    border-radius: 15px;
+    outline: 2px solid #1a1033;
+    outline-offset: -1px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    padding: 20px;
+}
+
+#formulario {
+    padding: 20px;
+}
+
+label {
+    color: #2B2B2B;
+}
+
+input {
+    border: 1px solid #6950A1;
+    border-radius: 5px;
+    height: 30px;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+button {
+    background-color: #6950A1;
+    color: white;
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    font-weight: 700;
+    margin-top: 25px;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    header {
+        padding: 10px;
+        height: auto;
+    }
+
+    #titulo {
+        text-align: center;
+        color: white;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 40px;
+        margin-top: 30px;
+        width: 100%;
+    }    
+
+    #card {        
+        position: relative;
+        width: 100%;
+        border: none;
+        border-radius: 0;
+    }
+
+    #conteudo-texto, #conteudo-formulario {
+        width: 100%;
+    }
+
+    #conteudo-formulario, #conteudo {
+        padding: 0;
+    }
+
+    #conteudo-texto {
+        padding: 30px;
+    }
+
+    #titulo-formulario {
+        border-radius: 0;
+    }
+}
