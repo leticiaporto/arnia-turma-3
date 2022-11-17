@@ -1,4 +1,4 @@
-const io = require('../io-lib/io')
+const io = require('../../io-lib/io')
 
 let numero
 let i = 1

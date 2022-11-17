@@ -1,4 +1,4 @@
-const io = require('../io-lib/io')
+const io = require('../../io-lib/io')
 
 const numero = 2048374
 

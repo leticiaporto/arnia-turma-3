@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <title>Documento de teste</title>
+    <link href="style.css" rel="stylesheet" />
+    <script>
+        let contraste = false;
+
+        window.onload = function (event) {
+            const body = document.getElementById('body')
+            body.className = 'body'
+
+            const section = document.getElementById('section')
+            section.className = 'section'
+
+            const firstParagraph = document.getElementById('firstParagraph')
+            firstParagraph.className = 'section-paragraph paragraph'
+
+            const secondParagraph = document.getElementById('secondParagraph')
+            secondParagraph.className = 'section-paragraph paragraph'
+
+            const thirdParagraph = document.getElementById('thirdParagraph')
+            thirdParagraph.className = 'paragraph'
+        }
+
+        function trocarTema() {
+            if (contraste) {
+                const body = document.getElementById('body')
+                body.className = 'body'
+
+                contraste = false
+            } else {
+                const body = document.getElementById('body')
+                body.className = 'body-dark'
+
+                contraste = true
+            }
+        }
+    </script>
+</head>
+
+<body id="body">
+    <h1 id="title">Este é o título da página</h1>
+    <section id="section">
+        <p id="firstParagraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, beatae! Non ratione
+            quae tempore, sequi cupiditate ducimus maxime quam. Voluptatum.</p>
+        <p id="secondParagraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur modi ab voluptatem
+            quaerat dolorem sed quibusdam deleniti ipsa aperiam fuga. Illo magni laudantium, placeat ea mollitia
+            delectus? Officia, aut animi.</p>
+    </section>
+    <p id="thirdParagraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae modi architecto harum
+        velit a nulla aut neque ex expedita asperiores, unde molestias, amet distinctio repudiandae earum aliquam magni,
+        voluptatem itaque!</p>
+    <button onclick="trocarTema()">Trocar tema</button>
+</body>
+
+</html>
