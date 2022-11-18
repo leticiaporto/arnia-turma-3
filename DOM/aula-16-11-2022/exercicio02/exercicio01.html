@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+    <script>
+        function expandir(itemId) {
+            const divItem = document.getElementById(itemId)
+            const descricao = divItem.querySelector('.descricao')
+
+            if (descricao.classList.contains('none')) {
+                descricao.classList.remove('none')
+                descricao.classList.add('block')
+
+            } else if (descricao.classList.contains('block')) {
+                descricao.classList.remove('block')
+                descricao.classList.add('none')
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <div id="head">
+            Arnia
+        </div>
+        <div id="conteudo">
+            <div id="titulo">
+                Perguntas frequentes
+            </div>
+            <div id="itens">
+                <div id="item1">
+                    <div class="pergunta">
+                        <div class="texto">
+                            O que é Arnia?
+                        </div>
+                        <button onclick="expandir('item1')">Expandir</button>
+                    </div>
+                    <div class="descricao none">
+                        Caso você mude de ideia e desista do curso em até 15 dias após o início das aulas, você não paga
+                        absolutamente nada, sem qualquer tipo de ônus ou dívida. Após os 15 primeiros dias de formação,
+                        caso você desista, deverá pagar um valor calculado proporcionalmente com base nos blocos
+                        cursados até o momento do desligamento, conforme detalhado nos documentos contratuais que serão
+                        apresentados.
+                    </div>
+                </div>
+                <div id="item2">
+                    <div class="pergunta">
+                        <div class="texto">
+                            A formação é presencial ou online?
+                        </div>
+                        <button onclick="expandir('item2')">Expandir</button>
+                    </div>
+                    <div class="descricao none">
+                        Caso você mude de ideia e desista do curso em até 15 dias após o início das aulas, você não paga
+                        absolutamente nada, sem qualquer tipo de ônus ou dívida. Após os 15 primeiros dias de formação,
+                        caso você desista, deverá pagar um valor calculado proporcionalmente com base nos blocos
+                        cursados até o momento do desligamento, conforme detalhado nos documentos contratuais que serão
+                        apresentados.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
