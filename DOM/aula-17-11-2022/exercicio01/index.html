@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>Cadastro</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="header">
+      <img src="logo.png" alt="logo" />
+    </header>
+    <main>
+      <form id="subscribe" class="card" action="/signup" method="post" novalidate>
+        <section>
+          <h1 class="title">Faça o seu cadastro</h1>
+        </section>
+        <section class="field">
+          <label for="fullName">Nome completo</label>
+          <input id="fullName" name="fullName" class="input" />
+          <small></small>
+        </section>
+        <section class="field">
+          <label for="email">E-mail</label>
+          <input id="email" name="email" class="input" />
+          <small></small>
+        </section>
+        <section class="field">
+          <label for="cpf">CPF</label>
+          <input id="cpf" name="cpf" class="input" />
+          <small></small>
+        </section>
+        <section class="field">
+          <label for="cep">CEP</label>
+          <input id="cep" name="cep" class="input" />
+          <small></small>
+        </section>
+        <section class="field">
+          <label for="password">Senha</label>
+          <input id="password" name="password" class="input" />
+          <small></small>
+        </section>
+        <section class="field">
+          <label for="confirmPassword">Confirme a senha</label>
+          <input id="confirmPassword" name="confirmPassword" class="input" />
+          <small></small>
+        </section>
+        <button type="submit" class="submit">CADASTRAR</button>
+      </form>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
