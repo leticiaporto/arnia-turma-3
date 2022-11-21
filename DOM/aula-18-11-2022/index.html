@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora</title>  
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <style>
+    body {            
+      font-family: 'Roboto', sans-serif;
+    }
+    
+    #expressao {
+      height: 40px; 
+      border: solid 1px #8c8c8c;
+      border-radius: 2px;
+      margin-bottom: 5px;
+      color: white;
+      text-align: right;
+      font-size: 24px;
+    }
+
+    button {
+      background-color: #1c00b8;
+      border: 0;
+      font-size: 18px;
+      min-height: 56px;
+      color: white;
+      border: 1px solid #828A9B;
+      background: white;
+      color: black;
+      min-width: 100%;
+      min-width: 25%;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #e2e2e2;
+    }
+
+    #c, #igual {
+      min-width: 50%;
+    }
+
+    #calculadora{
+      width: 320px;
+      background: #2a2a2a;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 0 auto;  
+    }
+
+    #botoes{
+      text-align: center;
+      display: flex;
+      justify-content: space-between;    
+      flex-wrap: wrap;
+    }
+  </style>
+  <script>
+    function adicionarDisplay(valor) {
+      const expressao = document.getElementById("expressao").innerHTML
+      document.getElementById("expressao").innerHTML = expressao + valor
+    }
+
+    function calcular() {
+      const expressao = document.getElementById("expressao").innerHTML
+      document.getElementById("expressao").innerHTML = eval(expressao)
+    }
+
+    function limparExpressao() {
+      document.getElementById("expressao").innerHTML = ''
+    }
+
+    function apagar() {
+      const expressao = document.getElementById("expressao").innerHTML
+      document.getElementById("expressao").innerHTML = expressao.substring(0, expressao.length - 1)
+    }  
+  </script>
+</head>
+
+<body>
+    <div id="calculadora">
+      <div id="expressao"></div>
+      <div id="botoes">     
+        <button type="button" name="limpar" id="c" onclick="limparExpressao();">C</button>
+        <button type="button" name="limpar" id="limpar" onclick="apagar();">Apagar</button>
+        <button type="button" name="somar" id="somar" onclick="adicionarDisplay('+');">+</button>  
+
+        <button type="button" name="um" id="um" onclick="adicionarDisplay(1);">1</button>
+        <button type="button" name="dois" id="dois" onclick="adicionarDisplay(2);">2</button>
+        <button type="button" name="tres" id="tres" onclick="adicionarDisplay(3);">3</button>
+        <button type="button" name="subtrair" id="subtrair" onclick="adicionarDisplay('-');">-</button>
+
+        <button type="button" name="quatro" id="quatro" onclick="adicionarDisplay(4);">4</button>
+        <button type="button" name="cinco" id="cinco" onclick="adicionarDisplay(5);">5</button>
+        <button type="button" name="seis" id="seis" onclick="adicionarDisplay(6);">6</button>
+        <button type="button" name="multiplicar" id="multiplicar" onclick="adicionarDisplay('*');">x</button>
+
+        <button type="button" name="sete" id="sete" onclick="adicionarDisplay(7);">7</button>
+        <button type="button" name="oito" id="oito" onclick="adicionarDisplay(8);">8</button>
+        <button type="button" name="nove" id="nove" onclick="adicionarDisplay(9);">9</button>
+        <button type="button" name="dividir" id="dividir" onclick="adicionarDisplay('/');">÷</button>
+
+        <button type="button" name="zero" id="zero" onclick="adicionarDisplay(0);">0</button>
+        <button type="button" name="ponto" id="ponto" onclick="adicionarDisplay('.');">.</button>
+        <button type="button" name="igual" id="igual" conteudo="=" onclick="calcular();">=</button>
+      </div>   
+    </div>
+</body>
+
+<!-- <script>
+    const buttons = document.querySelectorAll('button')
+    buttons.forEach((actionElement) => {
+        actionElement.addEventListener('click', (event) => {
+            event.preventDefault()
+        })
+    })
+</script> -->
+</html>
