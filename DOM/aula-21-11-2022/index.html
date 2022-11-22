@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Personagens Breaking Bad</title>
+    <link href="style.css" rel="stylesheet" />
+    <script src="app.js"></script>
+  </head>
+  <body onload="getCharacters()">
+    <div id="box">
+      <div id="data">
+        <img id="image" src="">
+        <div id="name"></div>
+        <div>
+          Data nascimento: <span id="birthday"></span>
+        </div>
+        <div>
+          Ocupações
+          <div id="jobs"></div>
+        </div>
+        <div>Apelido: <span id="nickname"></span></div>
+        <div>Ator: <span id="actor"></span></div>
+        <div>
+          Aparece nas temporadas:
+          <div id="seasons"></div>
+        </div>
+      </div>
+      <div id="footer">
+        <button type="button" onclick="previous()">Anterior</button>
+        <button type="button" onclick="next()">Próximo</button>
+      </div>
+    </div>
+  </body>
+</html>
