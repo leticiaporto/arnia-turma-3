@@ -1,14 +1,36 @@
 <html>
   <head>
     <title>Posts</title>
-    <link href="style.css" rel="stylesheet" />
-    <script src="app.js"></script>
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="js/app.js"></script>
   </head>
   <body onload="getPosts()">
-    <div id="box">
-      <div id="footer">
-        <button type="button" onclick="addPost()">Adicionar Post</button>
-        <button type="button" onclick="getPosts()">Listar Posts</button>
+    <div id="header">
+      <div id="logo">
+        <img src="images/image 1.png"/>
+      </div>
+      <div id="page-title">
+        Esportes
+      </div>
+    </div>    
+    <div id="content">
+      <a class="link" href="add.html">
+        <div class="button">
+          <div class="text-button">Adicionar Post</div>
+        </div>
+      </a>
+      <div class="card">
+        <div class="image">
+          <img src="images/image 2.png" />
+        </div>
+        <div class="card-content">
+          <div class="card-title">
+            "Estamos mortos. É um golpe muito duro", diz Messi após derrota da Argentina
+          </div>
+          <div class="card-text">
+            O atacante Lionel Messi, da Argentina, usou palavras fortes para expressar a tristeza pela derrota por 2 a 1 para a Arábia Saudita, nesta terça-feira, na abertura do Grupo C da Copa do Mundo...
+          </div>
+        </div>
       </div>
     </div>
   </body>

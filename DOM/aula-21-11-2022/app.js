@@ -2,7 +2,7 @@ const characters = []
 let currentPosition = 0
 
 async function getCharacters() {
-  characters.push(...(await (await fetch('https://www.breakingbadapi.com/api/characters?limit=5')).json()))
+  characters.push(...(await (await fetch('https://www.breakingbadapi.com/api/characters?limit=15')).json()))
   loadCharacter(currentPosition)
 }
 

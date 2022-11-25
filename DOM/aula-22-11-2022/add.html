@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>Posts</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="js/app.js" defer></script>
+  </head>
+  <body>
+    <div id="header">
+      <div id="logo">
+        <img src="images/image 1.png"/>
+      </div>
+    </div>  
+    <div id="content">
+      <form id="subscribe" class="form-card" action="/signup" method="post" novalidate>
+        <section>
+          <h1 class="title">Novo post</h1>
+        </section>
+        <section>
+          <label for="title">Título</label>
+          <input id="title" name="title" class="input input-default">
+        </section>
+        <section>
+          <label for="author">Autor</label>
+          <input id="author" name="author" class="input input-default">
+        </section>
+        <section>
+          <label for="image">Imagem</label>
+          <input id="image" name="image" class="input input-default">
+        </section>
+        <section>
+          <label for="text">Texto</label>
+          <textarea id="text" name="text" class="input" rows="10"></textarea>
+        </section>
+        <button type="submit" class="submit">SALVAR</button>
+      </form>
+    </div> 
+  </body>
+</html>

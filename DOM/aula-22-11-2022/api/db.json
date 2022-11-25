@@ -1,3 +1,18 @@
 {
-  "posts": []
+  "posts": [
+    {
+      "title": "Teste 123",
+      "author": "Teste 126",
+      "image": "Teste 127",
+      "text": "Teste 123",
+      "id": 1
+    },
+    {
+      "title": "teste 23",
+      "author": "teste 23",
+      "image": "teste 23",
+      "text": "teste 23",
+      "id": 2
+    }
+  ]
 }
