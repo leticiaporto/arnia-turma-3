@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins';
+}
+
+#header {
+  width: 100%;
+  height: 70px;
+  background-color: #6950A1;
+  display: flex;
+  align-items: center;
+}
+
+#page-title {
+  width: 100%;
+  text-align: center;
+  color: #ECECEC;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+#logo {
+  padding: 20px;
+}
+
+#content {
+  margin: 20px 10px;
+}
+
+.image img {
+  height: 215px;
+  cursor: pointer;
+}
+
+.card {
+  display: flex;
+  border: 1px solid #6950A1;
+  border-radius: 10px;
+  padding: 15px;
+  width: 70%;
+  margin-bottom: 15px;
+}
+
+.card-content {
+  margin-left: 15px;
+}
+
+.card-title{
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  color: #6950A1;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.button {
+  height: 40px;
+  width: 200px;
+  background: #6950A1;
+  border-radius: 10px;
+  color: white;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.text-button {
+  width: 100%;
+  text-align: center;
+}
+
+
+.header {
+  height: 92px;
+  padding: 17px;
+  background-color: #6950A1;
+  text-align: center;
+}
+
+.form-card {
+  border: 1px solid #6950A1;
+  width: 60%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 50px 50px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+.title {
+  margin-bottom: 31px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 31px;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid #6950A1;
+  border-radius: 15px;
+  padding-left: 10px;
+}
+
+.input-default {
+  height: 35px;
+}
+
+.submit {
+  width: 100%;
+  background: #6950A1;
+  border-radius: 25px;
+  color: white;
+  font-weight: 700;
+  height: 35px;
+  border: none;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+section {
+  margin-bottom: 15px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-header {
+  text-align: right;
+}
+
+.modal-container {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid gray;
+  width: 75%;
+}
+
+.close {
+  color: gray;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#image-modal {
+  max-width: 100%;
+  text-align: center;
+}
+
+.modal-image-content{
+  text-align: center;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .card {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .card-content {
+    margin-left:0;
+  }
+  
+  .modal-container {
+    width: 90%;
+  }
+
+  .form-card {
+    width: auto;
+    margin: 0;
+    padding: 15px;
+  }
+}
