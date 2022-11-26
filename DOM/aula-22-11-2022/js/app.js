@@ -4,11 +4,25 @@ let posts = []
 const getPosts = async () =>{  
   const apiResponse = await fetch('http://localhost:3000/posts')
   const posts = await apiResponse.json()
+  const content = document.getElementById('content')
 
-  // const content = document.getElementById('content')
-  // posts.map((post) => {
-  //   content.innerHTML = content.innerHTML + `<div>${post.title}<div>`
-  // })
+  posts.forEach((post) => {
+    content.innerHTML = content.innerHTML + `
+      <div class="card">
+        <div class="image">
+          <img src="${post.image}" />
+        </div>
+        <div class="card-content">
+          <div class="card-title">
+            ${post.title}
+          </div>
+          <div class="card-text">
+            ${post.text}
+          </div>
+        </div>
+      </div>
+    `
+  })
 }
 
 const addPost = async (post) => {
@@ -28,16 +42,19 @@ const addPost = async (post) => {
   window.open('index.html', '_self')   
 }
 
-form.addEventListener('submit', (event) => {
-  event.preventDefault()
+if(form) {
+  form.addEventListener('submit', (event) => {
+    event.preventDefault()
+  
+    const title = form.elements['title'].value
+    const author = form.elements['author'].value
+    const image = form.elements['image'].value
+    const text = form.elements['text'].value
+  
+    addPost({ title, author, image, text })  
+  })
+}
 
-  const title = form.elements['title'].value
-  const author = form.elements['author'].value
-  const image = form.elements['image'].value
-  const text = form.elements['text'].value
-
-  addPost({ title, author, image, text })  
-})
 
 
 
