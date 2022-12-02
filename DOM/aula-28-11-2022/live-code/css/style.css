@@ -59,3 +59,13 @@
   font-weight: bold;
   cursor: pointer;
 }
+
+.button {
+  border: 0;
+  background: none;
+  padding: 10px;
+}
+
+.remove-button i {
+  color: red;
+}

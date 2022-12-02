@@ -35,8 +35,8 @@ const renderQuestions = (questions) => {
                 <div class="card-body d-flex justify-content-between">
                     <div>${question.title}</div>
                     <div class="d-flex">
-                        <button type="button" onclick="editQuestion(${question.id})">Editar</button>
-                        <button type="button" onclick="deleteQuestion(${question.id})">Excluir</button>
+                        <button type="button" class="button" onclick="editQuestion(${question.id})"><i class="fa-solid fa-pen-to-square fa-lg"></i></button>
+                        <button type="button" class="button remove-button" onclick="deleteQuestion(${question.id})"><i class="fa-solid fa-trash-can fa-lg"></i></button>
                     </div>
                 </div>
             </div>
