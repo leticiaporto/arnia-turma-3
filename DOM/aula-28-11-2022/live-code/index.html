@@ -1,119 +1,121 @@
 <html>
-  <head>
+
+<head>
+    <meta charset="UTF-8">
     <title>Quiz</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous" defer
-    ></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"
+        defer></script>
     <script src="https://kit.fontawesome.com/f04378cf91.js" crossorigin="anonymous"></script>
     <link href="css/style.css" rel="stylesheet" />
     <script src="js/app.js" defer></script>
-  </head>
-  <body onload="getQuestions()">
+</head>
+
+<body onload="loadQuestions()">
     <div id="header" class="d-flex justify-content-between align-items-center">
-      <div id="logo">
-        <img src="images/image 1.png"/>
-      </div>
-      <div id="menu" class="d-flex">
-        <div class="menu-item">
-            Fazer Quiz
+        <div id="logo">
+            <img src="images/image 1.png" />
         </div>
-        <div class="menu-item" onclick="openModal()">
-            Cadastrar Perguntas
+        <div id="menu" class="d-flex">
+            <div class="menu-item">
+                <a href="quiz.html">Fazer Quiz</a>
+            </div>
+            <div class="menu-item" onclick="openModal()">
+                Cadastrar Perguntas
+            </div>
+            <div class="menu-item">
+                <a href="index.html">Listar Perguntas</a>
+            </div>
         </div>
-        <div class="menu-item">
-            Listar Perguntas
-        </div>
-      </div>
-    </div>    
+    </div>
     <div id="content">
     </div>
     <div id="modal" class="modal">
-      <div class="modal-container">
-        <div class="header-modal">
-          <span class="close" id="close-button" onclick="closeModal()">&times;</span>
+        <div class="modal-container">
+            <div class="header-modal">
+                <span class="close" id="close-button" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="content-modal">
+                <form id="subscribe" method="post">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="mb-3">
+                                <label class="form-label" for="title">Pergunta</label>
+                                <input type="text" name="title" id="title" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-10">
+                            <div class="mb-3">
+                                <label class="form-label" for="alternative1Text">Alternativa 1</label>
+                                <input type="text" name="alternative1Text" id="alternative1Text" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-2 align-self-center">
+                            <div class="mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="correct" id="alternative1"
+                                        value="alternative1" />
+                                    <label class="form-check-label" for="alternative1">Correto?</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-10">
+                            <div class="mb-3">
+                                <label class="form-label" for="alternative2Text">Alternativa 2</label>
+                                <input type="text" name="alternative2Text" id="alternative2Text" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-2 align-self-center">
+                            <div class="mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="correct" id="alternative2"
+                                        value="alternative2" />
+                                    <label class="form-check-label" for="alternative2">Correto?</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-10">
+                            <div class="mb-3">
+                                <label class="form-label" for="alternative3Text">Alternativa 3</label>
+                                <input type="text" name="alternative3Text" id="alternative3Text" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-2 align-self-center">
+                            <div class="mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="correct" id="alternative3"
+                                        value="alternative3" />
+                                    <label class="form-check-label" for="alternative3">Correto?</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-10">
+                            <div class="mb-3">
+                                <label class="form-label" for="alternative4Text">Alternativa 4</label>
+                                <input type="text" name="alternative4Text" id="alternative4Text" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="col-2 align-self-center">
+                            <div class="mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="correct" id="alternative4"
+                                        value="alternative4" />
+                                    <label class="form-check-label" for="alternative4">Correto?</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="primary-button">SALVAR</button>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="content-modal">
-            <form id="subscribe" method="post">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="mb-3">
-                            <label class="form-label" for="title">Pergunta</label>
-                            <input type="text" name="title" id="title" class="form-control" />
-                        </div>
-                    </div>
-                    <div class="col-10">
-                        <div class="mb-3">
-                            <label class="form-label" for="alternative1Text">Alternativa 1</label>
-                            <input type="text" name="alternative1Text" id="alternative1Text" class="form-control" />
-                        </div>
-                    </div>
-                    <div class="col-2 align-self-center">
-                        <div class="mb-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="correct" id="alternative1" value="alternative1" />
-                                <label class="form-check-label" for="alternative1">Correto?</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-10">
-                        <div class="mb-3">
-                            <label class="form-label" for="alternative2Text">Alternativa 2</label>
-                            <input type="text" name="alternative2Text" id="alternative2Text" class="form-control" />
-                        </div>
-                    </div>
-                    <div class="col-2 align-self-center">
-                        <div class="mb-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="correct" id="alternative2" value="alternative2" />
-                                <label class="form-check-label" for="alternative2">Correto?</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-10">
-                        <div class="mb-3">
-                            <label class="form-label" for="alternative3Text">Alternativa 3</label>
-                            <input type="text" name="alternative3Text" id="alternative3Text" class="form-control" />
-                        </div>
-                    </div>
-                    <div class="col-2 align-self-center">
-                        <div class="mb-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="correct" id="alternative3" value="alternative3" />
-                                <label class="form-check-label" for="alternative3">Correto?</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-10">
-                        <div class="mb-3">
-                            <label class="form-label" for="alternative4Text">Alternativa 4</label>
-                            <input type="text" name="alternative4Text" id="alternative4Text" class="form-control" />
-                        </div>
-                    </div>
-                    <div class="col-2 align-self-center">
-                        <div class="mb-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="correct" id="alternative4" value="alternative4" />
-                                <label class="form-check-label" for="alternative4">Correto?</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <button type="submit" class="btn btn-primary">SALVAR</button>
-                </div>
-            </form>
-        </div>
-      </div>
     </div>
-  </body>
+</body>
+
 </html>

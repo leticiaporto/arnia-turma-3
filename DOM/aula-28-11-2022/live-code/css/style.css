@@ -22,10 +22,12 @@
     gap: 30px;
 }
 
-.menu-item {
+.menu-item, .menu-item a {
     font-weight: 700;
     font-size: 14px;
     color: #FFFFFF;
+    cursor: pointer;
+    text-decoration: none;
     cursor: pointer;
 }
 
@@ -68,4 +70,43 @@
 
 .remove-button i {
   color: red;
+}
+
+.question-title, .footer-text {
+  font-weight: bold;
+}
+
+#content-quiz {
+  margin: 50px;
+  padding: 50px;
+  border: 1px solid #6950A1;
+  border-radius: 8px;
+}
+
+.primary-button {
+  border: none;
+  border-radius: 18px;
+  background-color: #6950A1;
+  color: white;
+  width: 200px;
+  height: 40px;
+}
+
+.simulate-quiz-button {
+  width: 200px;
+}
+
+.result-icon i {
+  color: green
+}
+
+.text {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 50px 0;
+  color: black;
+}
+
+.quiz-result {
+  text-align: center;
 }
