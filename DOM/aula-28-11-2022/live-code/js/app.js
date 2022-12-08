@@ -1,17 +1,32 @@
+// Variável com o elemento modal
 const modal = document.getElementById('modal')
+// Variável com o elemento formulário
 const form = document.getElementById('subscribe')
+// Variável para armazena a questão que está sendo editada
 let currentQuestion = null
+
+/* Variáveis para o funcionamento do Quiz */
+// Variável para armazena o index da questão que está sendo respondida
 let currentIndexQuizQuestion = 0
+// Variável para armazena a questão que está sendo respondida
 let currentQuizQuestion = null
+// Variável para armazena as questões do Quiz
 let quizQuestions = []
+// Variável para armazena as respostas do Quiz
 let quizAnswers = []
 
+// Método para abrir o modal definindo o display do elemento como "block"
 const openModal = () => {
     modal.style.display = "block"
 }
 
+// Método para fechar o modal definindo o display do elemento como "none"
 const closeModal = () => {
     modal.style.display = "none"
+}
+
+// Método para limpar os campos dos formúlários. Os valor de todos os campos de texto são definidos como vazios e os campos de radio como "false"
+const clearFormFields = () => {
     document.getElementById('title').value = ''
     document.getElementById('alternative1Text').value = ''
     document.getElementById(`alternative1`).checked = false
@@ -23,24 +38,21 @@ const closeModal = () => {
     document.getElementById(`alternative4`).checked = false
 }
 
-window.addEventListener("click", (event) => {
-    if (event.target === modal) {
-        closeModal()
-    }
-})
-
+// Método para buscar a lista de questões na API
 const getQuestions = async () => {
     const apiResponse = await fetch('http://localhost:3000/questions')
     const questions = await apiResponse.json()
     return questions
 }
 
+// Método para buscar uma questão na API
 const getQuestion = async (id) => {
     const apiResponse = await fetch(`http://localhost:3000/questions/${id}`)
     const question = await apiResponse.json()
     return question
 }
 
+// Método para cadastrar uma nova questão através da API
 const createQuestion = async (question) => {
     await fetch('http://localhost:3000/questions', {
         method: "POST",
@@ -52,6 +64,7 @@ const createQuestion = async (question) => {
     })
 }
 
+// Método para atualizar uma questão existente na API
 const updateQuestion = async (id, question) => {
     await fetch(`http://localhost:3000/questions/${id}`, {
         method: "PUT",
@@ -63,6 +76,7 @@ const updateQuestion = async (id, question) => {
     })
 }
 
+// Método para remover uma questão através da API
 const deleteQuestion = async (id) => {
     await fetch(`http://localhost:3000/questions/${id}`, {
         method: 'DELETE'
@@ -70,6 +84,11 @@ const deleteQuestion = async (id) => {
     getQuestions()
 }
 
+/*
+    Método para renderizar as questões no arquivo HTML.
+    Usa-se o atributo "innerHtml" do elemento com id "content" para adicionar novos trechos de código HTML na tela.
+    Neste caso, a cada iteração do forEach sob a variável "questions", adiciona-se na tela um Card com os dados correspondentes à Questão
+*/
 const renderQuestions = (questions) => {
     const questionsContent = document.getElementById('content')
     questionsContent.innerHTML = ''
@@ -89,22 +108,39 @@ const renderQuestions = (questions) => {
     })
 }
 
+/* 
+    Método para carregar as questões. 
+    Busca os dados na API e chama o método para renderiz-alos na tela.
+*/
 const loadQuestions = async () => {
     const questions = await getQuestions()
     renderQuestions(questions)
 }
 
+/* 
+    Método para salvar as questões (novo cadastro ou edição).
+*/
 const saveQuestion = async (question) => {
+    //Se não existe questão sendo editada no momento, chama o médoto de criação de uma nova questão
     if (currentQuestion === null) {
         await createQuestion(question)
     } else {
+        //Se existe questão sendo editada no momento, chama o médoto para atualização da mesma
         await updateQuestion(currentQuestion.id, question)
         currentQuestion = null
     }
+    // Chama o método para limpar os campos
+    clearFormFields()
+    // Chama o método para fechar o modal
     closeModal()
+    // Chama o método para carregar os dados atualizados na listagem
     loadQuestions()
 }
 
+/* 
+    Método chamado ao clicar no botão de "lápis" da listagem
+    Busca os dados da questão pelo "id" e carrega nos campos do modal, depois abre o modal
+*/
 const editQuestion = async (id) => {
     currentQuestion = await getQuestion(id)
     document.getElementById('title').value = currentQuestion.title
@@ -115,6 +151,7 @@ const editQuestion = async (id) => {
     openModal()
 }
 
+/* MÉTODOS RELACIONADOS AO QUIZ */
 const renderQuizQuestion = (index) => {
     const questionsContent = document.getElementById('content-quiz')
     questionsContent.innerHTML = ''
@@ -204,10 +241,13 @@ const finish = () => {
     renderQuizResult(correctPercentage.toFixed(2))
 }
 
+
 if (form) {
+    //Ouvinte da ação de submit do formulário
     form.addEventListener('submit', (event) => {
         event.preventDefault()
 
+        //Recupera os dados do formulário
         const title = form.elements['title'].value
         const alternative1 = form.elements['alternative1Text'].value
         const alternative2 = form.elements['alternative2Text'].value
@@ -215,6 +255,7 @@ if (form) {
         const alternative4 = form.elements['alternative4Text'].value
         const correct = form.elements['correct'].value
 
+        //Monta o objeto
         const question = {
             title,
             alternatives: [{
@@ -236,6 +277,15 @@ if (form) {
             ]
         }
 
+        //Chama o método para salvar a questão
         saveQuestion(question)
     })
 }
+
+//Ouvinte da ação de click fora do modal
+window.addEventListener("click", (event) => {
+    if (event.target === modal) {
+        clearFormFields()
+        closeModal()
+    }
+})
